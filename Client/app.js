@@ -12,9 +12,9 @@
         for(let i = 0; i < data.length; i++){
             $("#MovieList").append(`
             <tr>
-                <td style="text-align:center">${JSON.stringify(data[i].title).substring(1, data[i].title.length+1)}</td>
-                <td style="text-align:center">${JSON.stringify(data[i].director).substring(1, data[i].director.length+1)}</td>
-                <td style="text-align:center">${JSON.stringify(data[i].genre).substring(1, data[i].genre.length+1)}</td>
+                <td style="text-align:center">${data[i].title}</td>
+                <td style="text-align:center">${data[i].director}</td>
+                <td style="text-align:center">${data[i].genre}</td>
             </tr>`);
         }
         console.log(data);
