@@ -46,12 +46,33 @@
         e.preventDefault();
     }
 
-    // $('#my-button').on('click', handleClickFn);
+    function editForm( e ){
+        var dict = {
+            MovieId : parseInt(this["movieId"].value),
+        	Title : this["title"].value,
+            Director: this["director"].value,
+            Genre: this["genre"].value
+        };
 
-    // function handleClickFn( e ){
+        $.ajax({
+            url: 'https://localhost:44325/api/movie',
+            dataType: 'json',
+            type: 'put',
+            contentType: 'application/json',
+            data: JSON.stringify(dict),
+            success: function( data, textStatus, jQxhr ){
+                $('#response pre').html( data );
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
 
-    // }
+        e.preventDefault();
+    }
 
     $('#my-form').submit( processForm );
+    $('#edit-form').submit( editForm );
+
 
 })(jQuery);
