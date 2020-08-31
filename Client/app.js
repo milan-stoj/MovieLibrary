@@ -1,4 +1,19 @@
 (function($){
+
+    $.get('https://localhost:44325/api/movie', function(data){
+        
+        for(let i = 0; i < data.length; i++){
+
+            $("#MovieList").append(`<div>Director is:
+            ${JSON.stringify(data[i].director).substring(1, data[i].director.length+1)}
+            </div>`);
+
+        }
+
+        console.log(data);
+    })
+
+
     function processForm( e ){
         var dict = {
         	Title : this["title"].value,
@@ -23,5 +38,7 @@
         e.preventDefault();
     }
 
+
     $('#my-form').submit( processForm );
+
 })(jQuery);
