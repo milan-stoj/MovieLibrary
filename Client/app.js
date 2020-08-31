@@ -4,9 +4,9 @@
         
         $("#MovieList").html(`
         <tr>
-            <th>Title</th>
-            <th>Director</th>
-            <th>Genre</th>
+            <th style="text-align:center">Title</th>
+            <th style="text-align:center">Director</th>
+            <th style="text-align:center">Genre</th>
         </tr>`)
 
         for(let i = 0; i < data.length; i++){
