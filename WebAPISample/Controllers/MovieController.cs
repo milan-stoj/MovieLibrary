@@ -24,7 +24,12 @@ namespace WebAPISample.Controllers
         {
             List<Movie> moviesJson = _context.Movies.ToList();
             // Retrieve all movies from db logic
+<<<<<<< HEAD
+            var movieList = _context.Movies.ToList();
+            return Ok(movieList);
+=======
             return Ok(moviesJson);
+>>>>>>> 200822a22d58975a788b81ab9532799206e0cfa4
         }
 
         // GET api/movie/5
@@ -33,7 +38,8 @@ namespace WebAPISample.Controllers
         {
             // Retrieve movie by id from db logic
             // return Ok(movie);
-            return Ok();
+            var movie = _context.Movies.Where(m => m.MovieId == id);
+            return Ok(movie);
         }
 
         // POST api/movie
@@ -41,6 +47,8 @@ namespace WebAPISample.Controllers
         public IActionResult Post([FromBody]Movie value)
         {
             // Create movie in db logic
+            _context.Movies.Add(value);
+            _context.SaveChanges();
             return Ok();
         }
 
