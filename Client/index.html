@@ -41,7 +41,7 @@
 
     <div class="container">
         <div>
-            <h3>Movie Actions</h3>
+            <h3>Add Movie</h3>
             <form id="my-form">
                 <input type="text" name="title" placeholder="Title" />
                 <input type="text" name="director" placeholder="Director" />
@@ -51,12 +51,23 @@
         </div>
     </div>
 
-
-
     <div class="container py-3">
         <h3>Movie Titles</h3>
         <table id="MovieList" style="width:66%" class="table"></table>
     </div>
+
+    <div class="container">
+      <div>
+          <h3>Edit Movie</h3>
+          <form id="edit-form">
+              <input type="text" name="movieId" placeholder="Movie ID" />
+              <input type="text" name="title" placeholder="Title" />
+              <input type="text" name="director" placeholder="Director" />
+              <input type="text" name="genre" placeholder="Genre" />
+              <button type="submit">Submit</button>
+          </form>
+      </div>
+  </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="./app.js"></script>

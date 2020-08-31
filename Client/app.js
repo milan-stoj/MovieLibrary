@@ -4,6 +4,7 @@
         
         $("#MovieList").html(`
         <tr>
+            <th style="text-align:center">Movie ID</th>
             <th style="text-align:center">Title</th>
             <th style="text-align:center">Director</th>
             <th style="text-align:center">Genre</th>
@@ -11,7 +12,8 @@
 
         for(let i = 0; i < data.length; i++){
             $("#MovieList").append(`
-            <tr>
+            <tr id="${data[i].movieId}">
+                <td style="text-align:center">${data[i].movieId}</td>
                 <td style="text-align:center">${data[i].title}</td>
                 <td style="text-align:center">${data[i].director}</td>
                 <td style="text-align:center">${data[i].genre}</td>
@@ -19,7 +21,6 @@
         }
         console.log(data);
     });
-
 
     function processForm( e ){
         var dict = {
@@ -45,6 +46,11 @@
         e.preventDefault();
     }
 
+    // $('#my-button').on('click', handleClickFn);
+
+    // function handleClickFn( e ){
+
+    // }
 
     $('#my-form').submit( processForm );
 
