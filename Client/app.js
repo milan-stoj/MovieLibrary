@@ -2,7 +2,8 @@
     function processForm( e ){
         var dict = {
         	Title : this["title"].value,
-        	Director: this["director"].value
+            Director: this["director"].value,
+            Genre: this["genre"].value
         };
 
         $.ajax({
