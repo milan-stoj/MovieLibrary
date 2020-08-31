@@ -24,12 +24,7 @@ namespace WebAPISample.Controllers
         {
             List<Movie> moviesJson = _context.Movies.ToList();
             // Retrieve all movies from db logic
-<<<<<<< HEAD
-            var movieList = _context.Movies.ToList();
-            return Ok(movieList);
-=======
             return Ok(moviesJson);
->>>>>>> 200822a22d58975a788b81ab9532799206e0cfa4
         }
 
         // GET api/movie/5
