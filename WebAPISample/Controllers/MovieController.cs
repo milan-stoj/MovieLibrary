@@ -42,6 +42,10 @@ namespace WebAPISample.Controllers
         public IActionResult Post([FromBody]Movie value)
         {
             // Create movie in db logic
+            //var movie = new Movie();
+            //movie.Title = value.Title;
+            //movie.Director = value.Director;
+            //movie.Genre = value.Genre;
             _context.Movies.Add(value);
             _context.SaveChanges();
             return Ok();
