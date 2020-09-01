@@ -1,7 +1,6 @@
 (function($){
 
     function updateTable(){
-        
         $.get('https://localhost:44325/api/movie', function(data){
             $("#MovieList").html(`
             <tr>
@@ -10,7 +9,6 @@
                 <th style="text-align:center">Director</th>
                 <th style="text-align:center">Genre</th>
             </tr>`)
-
             for(let i = 0; i < data.length; i++){
                 $("#MovieList").append(`
                 <tr id="${data[i].movieId}">
@@ -23,15 +21,13 @@
             console.log(data);
         });
     }
-    
 
     function processForm( e ){
         var dict = {
-        	Title : this["title"].value,
+            Title : this["title"].value,
             Director: this["director"].value,
             Genre: this["genre"].value
         };
-
         $.ajax({
             url: 'https://localhost:44325/api/movie',
             dataType: 'json',
@@ -46,18 +42,16 @@
                 console.log( errorThrown );
             }
         });
-
         e.preventDefault();
     }
 
     function editForm( e ){
         var dict = {
             MovieId : parseInt(this["movieId"].value),
-        	Title : this["title"].value,
+            Title : this["title"].value,
             Director: this["director"].value,
             Genre: this["genre"].value
         };
-
         $.ajax({
             url: 'https://localhost:44325/api/movie',
             dataType: 'json',
@@ -73,7 +67,6 @@
                 console.log( errorThrown );
             }
         });
-
         e.preventDefault();
     }
 
@@ -89,15 +82,12 @@
                 console.log( errorThrown );
             }
         });
-
         e.preventDefault();
     }
-
 
     $('#my-form').submit( processForm );
     $('#edit-form').submit( editForm );
     $('#delete-form').submit( deleteForm );
     updateTable();
 
-
-})(jQuery);
+})(jQuery)
