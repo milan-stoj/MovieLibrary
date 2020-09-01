@@ -1,4 +1,6 @@
-$.get('https://localhost:44325/api/movie', function(data){
+(function($){
+
+    $.get('https://localhost:44325/api/movie', function(data){
         
         $("#MovieList").html(`
         <tr>
@@ -20,10 +22,6 @@ $.get('https://localhost:44325/api/movie', function(data){
         console.log(data);
     });
 
-(function($){
-    
-    
-
     function processForm( e ){
         var dict = {
         	Title : this["title"].value,
@@ -39,6 +37,8 @@ $.get('https://localhost:44325/api/movie', function(data){
             data: JSON.stringify(dict),
             success: function( data, textStatus, jQxhr ){
                 $('#response pre').html( data );
+                location.reload();
+                
             },
             error: function( jqXhr, textStatus, errorThrown ){
                 console.log( errorThrown );
@@ -64,6 +64,8 @@ $.get('https://localhost:44325/api/movie', function(data){
             data: JSON.stringify(dict),
             success: function( data, textStatus, jQxhr ){
                 $('#response pre').html( data );
+                location.reload();
+
             },
             error: function( jqXhr, textStatus, errorThrown ){
                 console.log( errorThrown );
@@ -79,6 +81,7 @@ $.get('https://localhost:44325/api/movie', function(data){
             type: 'delete',
             success: function( data, textStatus, jQxhr ){
                 $('#response pre').html( data );
+                location.reload();
             },
             error: function( jqXhr, textStatus, errorThrown ){
                 console.log( errorThrown );
